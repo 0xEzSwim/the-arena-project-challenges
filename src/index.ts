@@ -2,7 +2,8 @@ import {
     printString, 
     printNumber,
     arrLength,
-    strLength } from "./cs-fundamentals-typescript/basic-structures";
+    strLength,
+    split } from "./cs-fundamentals-typescript/basic-structures";
 
 
 const string = 'Hello project arena!';
@@ -11,3 +12,6 @@ printString(string);
 printNumber(arrLength(array));
 printString('');
 printNumber(strLength(string));
+printString('');
+console.log('string split:', split(string));
+
