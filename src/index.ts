@@ -1,7 +1,13 @@
 import { 
     printString, 
     printNumber,
-    arrLength } from "./cs-fundamentals-typescript/basic-structures";
+    arrLength,
+    strLength } from "./cs-fundamentals-typescript/basic-structures";
 
-printString('Hello project arena!');
-printNumber(arrLength([1, 2, 3, 4, 5]));
+
+const string = 'Hello project arena!';
+const array = [1, 3, 3, 7];
+printString(string);
+printNumber(arrLength(array));
+printString('');
+printNumber(strLength(string));
