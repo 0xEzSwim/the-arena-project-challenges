@@ -11,7 +11,8 @@ import {
     forEach,
     map,
     filter,
-    find
+    find,
+    some
 } from "./cs-fundamentals-typescript/basic-structures";
 
 
@@ -33,3 +34,4 @@ printString('');
 console.log('map * 2:', map(array, (elem) => (elem * 2)));
 console.log('filter > 2:', filter(array, (elem) => (elem > 2)));
 console.log('find 2:', find(array, (elem) => (elem === 2)));
+console.log('some 2:', some(array, (elem) => (elem === 2)));
