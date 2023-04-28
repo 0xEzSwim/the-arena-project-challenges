@@ -16,3 +16,4 @@ export * from './every';
 export * from './diff';
 export * from './is-alpha';
 export * from './concat-n';
+export * from './compare-n';
