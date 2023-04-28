@@ -13,7 +13,8 @@ import {
     filter,
     find,
     some,
-    every
+    every,
+    diff
 } from "./cs-fundamentals-typescript/basic-structures";
 
 
@@ -37,3 +38,4 @@ console.log('filter > 2:', filter(array, (elem) => (elem > 2)));
 console.log('find 2:', find(array, (elem) => (elem === 2)));
 console.log('some 2:', some(array, (elem) => (elem === 2)));
 console.log('every 2:', every(array, (elem) => (elem === 2)));
+console.log('diff :', diff(array, [1, 4, 5]));
