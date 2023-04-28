@@ -3,7 +3,8 @@ import {
     printNumber,
     arrLength,
     strLength,
-    split } from "./cs-fundamentals-typescript/basic-structures";
+    split,
+    reverseString } from "./cs-fundamentals-typescript/basic-structures";
 
 
 const string = 'Hello project arena!';
@@ -14,4 +15,5 @@ printString('');
 printNumber(strLength(string));
 printString('');
 console.log('string split:', split(string));
+console.log('reverse string:', reverseString(string));
 
