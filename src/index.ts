@@ -15,7 +15,8 @@ import {
     some,
     every,
     diff,
-    isAlpha
+    isAlpha,
+    concatN
 } from "./cs-fundamentals-typescript/basic-structures";
 
 
@@ -41,3 +42,4 @@ console.log('some 2:', some(array, (elem) => (elem === 2)));
 console.log('every 2:', every(array, (elem) => (elem === 2)));
 console.log('diff :', diff(array, [1, 4, 5]));
 console.log('isAlpha :', isAlpha(string));
+console.log('concat 100 :', concatN(string, "hello world!", 3));

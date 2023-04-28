@@ -4,7 +4,7 @@ type CallbackFn = (elem: any) => boolean;
 type FilterFn = (arr: any[], cb: CallbackFn) => any[];
 
 export const filter: FilterFn = (arr: any[], cb: CallbackFn): any[] => {
-    const arrayLength = arrLength(arr);
+    const arrayLength: number = arrLength(arr);
     let i: number = 0;
     let j: number = 0;
     let newArr: any[] = [];

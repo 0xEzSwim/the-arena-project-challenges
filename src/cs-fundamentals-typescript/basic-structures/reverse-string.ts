@@ -3,7 +3,7 @@ import { arrLength } from "./array-length";
 
 type ReverseStringFn = (str: string) => string;
 
-const arrayJoin = (array: string[]): string => {
+export const arrayJoin = (array: string[]): string => {
     let string: string = '';
     let i: number = 0;
     while (i < arrLength(array)) {

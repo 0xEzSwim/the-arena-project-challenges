@@ -15,3 +15,4 @@ export * from './some';
 export * from './every';
 export * from './diff';
 export * from './is-alpha';
+export * from './concat-n';
