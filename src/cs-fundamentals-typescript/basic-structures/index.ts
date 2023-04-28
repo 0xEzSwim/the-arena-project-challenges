@@ -6,3 +6,4 @@ export * from './split';
 export * from './reverse-string';
 export * from './push';
 export * from './reverse-numbers';
+export * from './index-of';

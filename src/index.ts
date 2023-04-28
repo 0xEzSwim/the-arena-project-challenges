@@ -6,7 +6,8 @@ import {
     split,
     reverseString,
     push,
-    reverseNumbers 
+    reverseNumbers,
+    indexOf
 } from "./cs-fundamentals-typescript/basic-structures";
 
 
@@ -22,4 +23,5 @@ console.log('reverse string:', reverseString(string));
 push(array, 4);
 console.log('push array:', array);
 console.log('reverse numbers:', reverseNumbers(array));
+console.log('indexOf:', indexOf(array, 5));
 
