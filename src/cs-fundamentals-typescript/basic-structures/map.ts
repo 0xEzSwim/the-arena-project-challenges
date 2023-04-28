@@ -4,7 +4,7 @@ type CallbackFn = (elem: any) => any;
 type MapFn = (arr: any[], cb: CallbackFn) => any[];
 
 export const map: MapFn = (arr: any[], cb: CallbackFn): any[] => {
-    const arrayLength = arrLength(arr);
+    const arrayLength: number = arrLength(arr);
     let i: number = 0;
     let newArr: any[] = [];
     while(i < arrayLength) {
