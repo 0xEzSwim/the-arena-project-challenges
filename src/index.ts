@@ -12,7 +12,8 @@ import {
     map,
     filter,
     find,
-    some
+    some,
+    every
 } from "./cs-fundamentals-typescript/basic-structures";
 
 
@@ -35,3 +36,4 @@ console.log('map * 2:', map(array, (elem) => (elem * 2)));
 console.log('filter > 2:', filter(array, (elem) => (elem > 2)));
 console.log('find 2:', find(array, (elem) => (elem === 2)));
 console.log('some 2:', some(array, (elem) => (elem === 2)));
+console.log('every 2:', every(array, (elem) => (elem === 2)));

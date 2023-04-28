@@ -12,3 +12,4 @@ export * from './map';
 export * from './filter';
 export * from './find';
 export * from './some';
+export * from './every';
