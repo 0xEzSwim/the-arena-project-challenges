@@ -16,7 +16,7 @@ const arrayJoin = (array: string[]): string => {
 export const reverseString: ReverseStringFn = (str: string): string => {
     let i: number = strLength(str) - 1;
     let j: number = 0;
-    const array: string[] = [];
+    let array: string[] = [];
     while(i >= 0) {
         array[j++] = str[i--];
     }

@@ -5,7 +5,9 @@ import {
     strLength,
     split,
     reverseString,
-    push } from "./cs-fundamentals-typescript/basic-structures";
+    push,
+    reverseNumbers 
+} from "./cs-fundamentals-typescript/basic-structures";
 
 
 const string: string = 'Hello project arena!';
@@ -19,4 +21,5 @@ console.log('string split:', split(string));
 console.log('reverse string:', reverseString(string));
 push(array, 4);
 console.log('push array:', array);
+console.log('reverse numbers:', reverseNumbers(array));
 
