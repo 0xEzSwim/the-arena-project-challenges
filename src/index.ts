@@ -8,7 +8,8 @@ import {
     push,
     reverseNumbers,
     indexOf,
-    forEach
+    forEach,
+    map
 } from "./cs-fundamentals-typescript/basic-structures";
 
 
@@ -26,4 +27,6 @@ console.log('push array:', array);
 console.log('reverse numbers:', reverseNumbers(array));
 console.log('indexOf:', indexOf(array, 5));
 forEach(array, printNumber);
+printString('');
+console.log('map:', map(array, (elem) => (elem * 2)));
 

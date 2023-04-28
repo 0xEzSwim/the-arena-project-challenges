@@ -8,3 +8,4 @@ export * from './push';
 export * from './reverse-numbers';
 export * from './index-of';
 export * from './for-each';
+export * from './map';
