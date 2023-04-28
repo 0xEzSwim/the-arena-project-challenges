@@ -7,9 +7,9 @@ export const indexOf: IndexOfFn = (arr: any[], elem: any): number => {
     let i: number = 0;
     while(i < arrayLength) {
         if(arr[i] === elem) {
-            break;
+            return i;
         }
         i++;
     }
-    return i == arrayLength ? -1 : i;
+    return -1;
 };
