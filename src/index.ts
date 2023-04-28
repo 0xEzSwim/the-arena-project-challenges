@@ -9,7 +9,8 @@ import {
     reverseNumbers,
     indexOf,
     forEach,
-    map
+    map,
+    filter
 } from "./cs-fundamentals-typescript/basic-structures";
 
 
@@ -29,4 +30,4 @@ console.log('indexOf:', indexOf(array, 5));
 forEach(array, printNumber);
 printString('');
 console.log('map:', map(array, (elem) => (elem * 2)));
-
+console.log('filter:', filter(array, (elem) => (elem > 2)));
