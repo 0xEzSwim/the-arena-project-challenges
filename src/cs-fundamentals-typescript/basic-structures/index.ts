@@ -14,3 +14,4 @@ export * from './find';
 export * from './some';
 export * from './every';
 export * from './diff';
+export * from './is-alpha';

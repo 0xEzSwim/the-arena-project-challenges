@@ -14,7 +14,8 @@ import {
     find,
     some,
     every,
-    diff
+    diff,
+    isAlpha
 } from "./cs-fundamentals-typescript/basic-structures";
 
 
@@ -39,3 +40,4 @@ console.log('find 2:', find(array, (elem) => (elem === 2)));
 console.log('some 2:', some(array, (elem) => (elem === 2)));
 console.log('every 2:', every(array, (elem) => (elem === 2)));
 console.log('diff :', diff(array, [1, 4, 5]));
+console.log('isAlpha :', isAlpha(string));
