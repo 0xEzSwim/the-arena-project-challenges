@@ -19,6 +19,10 @@ import {
     concatN,
     compareN
 } from "./cs-fundamentals-typescript/basic-structures";
+import { 
+    iterativeFactorial,
+    recursiveFactorial
+} from "./cs-fundamentals-typescript/iteration-recursion";
 
 
 const string: string = 'Hello project arena!';
@@ -45,3 +49,5 @@ console.log('diff :', diff(array, [1, 4, 5]));
 console.log('isAlpha :', isAlpha(string));
 console.log('concat 100 :', concatN(string, "Hello world!", 3));
 console.log('compare 7 :', compareN(string, "Hello world!", 7));
+console.log('iterative factorial 6 :', iterativeFactorial(6));
+console.log('recursive factorial 6 :', recursiveFactorial(6));
