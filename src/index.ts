@@ -25,7 +25,9 @@ import {
     iterativePower,
     recursivePower,
     fibonacci,
-    exitTheCorridor
+    exitTheCorridor,
+    avoidTheWarriors,
+    Runway
 } from "./cs-fundamentals-typescript/iteration-recursion";
 
 
@@ -59,3 +61,12 @@ console.log('iterative factorial 2^3 :', iterativePower(2, 3));
 console.log('recursive factorial 2^3 :', recursivePower(2, 3));
 console.log('fibonacci :', fibonacci(10));
 console.log('the number of boxes to go through before exiting the corridor:', exitTheCorridor([0, 0, 10, 0, 0, 0, 8, 0, 0, 12, 0, 5, 0]));
+const runway: Runway = [
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [1, 0],
+    [0, 0],
+    [0, 0],
+];
+console.log("the number of steps sideways you had to take to avoid the warriors:", avoidTheWarriors(runway));
