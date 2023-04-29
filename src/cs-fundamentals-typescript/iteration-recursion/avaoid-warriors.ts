@@ -25,9 +25,11 @@ export const avoidTheWarriors: AvoidTheWarriorsFn = (runway: Runway): number => 
 };
 
 const avoidTheWarriorsRecurse = (runway: Runway, position: Coordinate): number => {
-    if(position.y == 0 && position.x == 0) {
+    const isEnd: boolean = position.y == 0 && position.x == 0;
+    const isEndOfLineOrWarriorAhead: boolean = position.y == 0 || runway[position.y-1][position.x] === 1;
+    if(isEnd) {
         return 0;
-    } else if (position.y == 0 && position.x == 1 || runway[position.y-1][position.x] == 1) {
+    } else if (isEndOfLineOrWarriorAhead) {
         const newPosition: Coordinate = new Coordinate(position.x == 0 ? position.x + 1 : position.x - 1, position.y);
         return 1 + avoidTheWarriorsRecurse(runway, newPosition);
     }
