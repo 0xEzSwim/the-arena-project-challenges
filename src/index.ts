@@ -21,7 +21,9 @@ import {
 } from "./cs-fundamentals-typescript/basic-structures";
 import { 
     iterativeFactorial,
-    recursiveFactorial
+    recursiveFactorial,
+    iterativePower,
+    recursivePower
 } from "./cs-fundamentals-typescript/iteration-recursion";
 
 
@@ -51,3 +53,5 @@ console.log('concat 100 :', concatN(string, "Hello world!", 3));
 console.log('compare 7 :', compareN(string, "Hello world!", 7));
 console.log('iterative factorial 6 :', iterativeFactorial(6));
 console.log('recursive factorial 6 :', recursiveFactorial(6));
+console.log('iterative factorial 2^3 :', iterativePower(2, 3));
+console.log('recursive factorial 2^3 :', recursivePower(2, 3));
