@@ -1,5 +1,6 @@
 import { 
-    atoi 
+    atoi, 
+    itoa 
 } from "./cs-fundamentals-typescript/base";
 import { 
     printString, 
@@ -84,3 +85,4 @@ const matrix: Matrix = [
 ]
 console.log("the shortest path is :", findShortestPath([1, 0], [3, 4], matrix));
 console.log("Convert string to number:", atoi('1213a'));
+console.log("Convert number to string:", itoa(-0));
