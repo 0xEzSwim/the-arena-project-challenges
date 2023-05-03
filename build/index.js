@@ -57,3 +57,6 @@ console.log("Convert number to binary:", (0, base_1.itobin)(10));
 console.log("Convert number to hexa:", (0, base_1.itohex)(-15));
 console.log("Convert number to emojies:", (0, base_1.itoji)(-36));
 console.log("README.md:", (0, file_system_manipulation_1.readFileSync)("./README.md"));
+const filename = 'large-string.txt';
+const data = 'The Arena Project\n'.repeat(100000);
+(0, file_system_manipulation_1.writeFileSync)(filename, Buffer.from(data));
