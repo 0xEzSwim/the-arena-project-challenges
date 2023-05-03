@@ -27,7 +27,9 @@ import {
     fibonacci,
     exitTheCorridor,
     avoidTheWarriors,
-    Runway
+    Runway,
+    findShortestPath,
+    Matrix
 } from "./cs-fundamentals-typescript/iteration-recursion";
 
 
@@ -70,3 +72,11 @@ const runway: Runway = [
     [0, 0],
 ];
 console.log("the number of steps sideways you had to take to avoid the warriors:", avoidTheWarriors(runway));
+const matrix: Matrix = [
+	[0,1,1,0,1],
+	[0,0,1,0,1],
+	[0,0,1,1,1],
+	[0,0,1,0,1],
+	[0,0,1,1,1],
+]
+console.log("the shortest path is :", findShortestPath([1, 0], [3, 4], matrix));
