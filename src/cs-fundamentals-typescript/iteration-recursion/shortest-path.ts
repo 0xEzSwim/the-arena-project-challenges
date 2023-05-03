@@ -1,4 +1,4 @@
-type Coordinate = [number, number];
+type Coordinate = [number, number]; // [column, row]
 export type Matrix = number[][];
 type FindPathFn = (begin: Coordinate, end: Coordinate, matrix: Matrix) => number;
 
@@ -56,11 +56,11 @@ export const findShortestPath: FindPathFn = (begin: Coordinate, end: Coordinate,
     };
     
     const findPathsRecursive = (currentPosition: Coordinate, exploredPositions: Coordinate[]) => {
+        const exploredTemp: Coordinate[] = [...exploredPositions, currentPosition];
         if(isPositionEqual(currentPosition, end)){
-            paths.push(exploredPositions);
+            paths.push(exploredTemp);
         }
     
-        const exploredTemp: Coordinate[] = [...exploredPositions, currentPosition];
         const upPosition: Coordinate = goUp(currentPosition);
         if(canGoToPosition(upPosition, exploredPositions)){
             findPathsRecursive(upPosition, exploredTemp);
@@ -80,6 +80,6 @@ export const findShortestPath: FindPathFn = (begin: Coordinate, end: Coordinate,
     };
 
     findPathsRecursive(begin, []);
-    const shortestPathFirst = paths.map((path) => path.length + 1).sort((a, b) => a - b);
+    const shortestPathFirst = paths.map((path) => path.length).sort((a, b) => a - b);
     return shortestPathFirst[0];
 };
