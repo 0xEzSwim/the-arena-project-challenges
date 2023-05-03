@@ -1,17 +1,9 @@
-type ItoaFn = (nb: number) => string;
+type ItobinFn = (nb: number) => string;
 
-export const itoa : ItoaFn = (nb: number): string => {
+export const itobin : ItobinFn = (nb: number): string => {
     const asciiNum: { [id: number] : number; } = {
         0: 48,
-        1: 49,
-        2: 50,
-        3: 51, 
-        4: 52,
-        5: 53,
-        6: 54,
-        7: 55,
-        8: 56,
-        9: 57
+        1: 49
     };
     let res: string = '';
     let isNegative: boolean = false;
@@ -23,11 +15,11 @@ export const itoa : ItoaFn = (nb: number): string => {
     if(nb == 0) {
         res = String.fromCharCode(asciiNum[0])
     } else {
-        while (nb > 9) {
-            let remainder = nb % 10;
-            nb = Math.floor(nb/10);
+        while (nb > 0) {
+            let remainder = nb % 2;
+            nb = Math.floor(nb/2);
             array.unshift(remainder);
-            if(nb < 9) {
+            if(nb < 0) {
                 array.unshift(nb);
             }
         }
