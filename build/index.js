@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const base_1 = require("./cs-fundamentals-typescript/base");
 const basic_structures_1 = require("./cs-fundamentals-typescript/basic-structures");
+const file_system_manipulation_1 = require("./cs-fundamentals-typescript/file-system-manipulation");
 const iteration_recursion_1 = require("./cs-fundamentals-typescript/iteration-recursion");
 const string = 'Hello project arena!';
 const array = [1, 2, 3];
@@ -55,3 +56,4 @@ console.log("Convert number to string:", (0, base_1.itoa)(-0));
 console.log("Convert number to binary:", (0, base_1.itobin)(10));
 console.log("Convert number to hexa:", (0, base_1.itohex)(-15));
 console.log("Convert number to emojies:", (0, base_1.itoji)(-36));
+console.log("README.md:", (0, file_system_manipulation_1.readFileSync)("./README.md"));

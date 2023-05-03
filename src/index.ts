@@ -26,6 +26,7 @@ import {
     concatN,
     compareN
 } from "./cs-fundamentals-typescript/basic-structures";
+import { readFileSync } from "./cs-fundamentals-typescript/file-system-manipulation";
 import { 
     iterativeFactorial,
     recursiveFactorial,
@@ -92,3 +93,4 @@ console.log("Convert number to string:", itoa(-0));
 console.log("Convert number to binary:", itobin(10));
 console.log("Convert number to hexa:", itohex(-15));
 console.log("Convert number to emojies:", itoji(-36));
+console.log("README.md:", readFileSync("./README.md"));
