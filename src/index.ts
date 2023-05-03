@@ -2,7 +2,8 @@ import {
     atoi, 
     itoa, 
     itobin,
-    itohex
+    itohex,
+    itoji
 } from "./cs-fundamentals-typescript/base";
 import { 
     printString, 
@@ -90,3 +91,4 @@ console.log("Convert string to number:", atoi('1213a'));
 console.log("Convert number to string:", itoa(-0));
 console.log("Convert number to binary:", itobin(10));
 console.log("Convert number to hexa:", itohex(-15));
+console.log("Convert number to emojies:", itoji(-36));
