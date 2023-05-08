@@ -39,6 +39,16 @@ import {
     findShortestPath,
     Matrix
 } from "./cs-fundamentals-typescript/iteration-recursion";
+import { 
+    Link, 
+    llAddAfter, 
+    llCreateLink, 
+    llUnshift,
+    llPush,
+    llPrint,
+    llMerge,
+    llUltimerge
+} from "./cs-fundamentals-typescript/linked-list";
 
 
 const string: string = 'Hello project arena!';
@@ -97,3 +107,16 @@ console.log("README.md:", readFileSync("./README.md"));
 const filename = 'large-string.txt';
 const data = 'The Arena Project\n'.repeat(100000);
 writeFileSync(filename, Buffer.from(data));
+
+let single: Link<number> = llCreateLink(10);
+let second: Link<number> = llCreateLink(1);
+let first: Link<number> = llUnshift(second, 0);
+let third: Link<number> = llAddAfter(second, 2);
+let fourth: Link<number> = llPush(null, 3);
+let fith: Link<number> = llPush(fourth, 4);
+let sixth: Link<number> = llPush(fourth, 5);
+llPrint(single, "Single linked list:");
+llPrint(first, "First half of linked list:");
+llPrint(fourth, "Second half of linked list:");
+llPrint(llMerge(first, fourth), "Merge of linked list:");
+llPrint(llUltimerge(fourth, single), "Ultimerge of linked list:");
