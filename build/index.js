@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const base_1 = require("./cs-fundamentals-typescript/base");
 const basic_structures_1 = require("./cs-fundamentals-typescript/basic-structures");
+const binary_tree_1 = require("./cs-fundamentals-typescript/binary-tree");
 const file_system_manipulation_1 = require("./cs-fundamentals-typescript/file-system-manipulation");
 const iteration_recursion_1 = require("./cs-fundamentals-typescript/iteration-recursion");
 const linked_list_1 = require("./cs-fundamentals-typescript/linked-list");
@@ -73,3 +74,139 @@ let sixth = (0, linked_list_1.llPush)(fourth, 5);
 (0, linked_list_1.llPrint)(fourth, "Second half of linked list:");
 (0, linked_list_1.llPrint)((0, linked_list_1.llMerge)(first, fourth), "Merge of linked list:");
 (0, linked_list_1.llPrint)((0, linked_list_1.llUltimerge)(fourth, single), "Ultimerge of linked list:");
+/**
+ * 8
+ * |___22
+ * |   |___24
+ * |   |   |___38
+ * |   |___10
+ * |   |   |___20
+ * |___2
+ * |   |___3
+ * |   |___1
+ * |   |   |___0
+ *
+ */
+console.log("\n-- Root --");
+let root = (0, binary_tree_1.createNode)(8);
+root = (0, binary_tree_1.insertBalanced)(root, 2);
+root = (0, binary_tree_1.insertBalanced)(root, 1);
+root = (0, binary_tree_1.insertBalanced)(root, 0);
+root = (0, binary_tree_1.insertBalanced)(root, 3);
+root = (0, binary_tree_1.insertBalanced)(root, 22);
+root = (0, binary_tree_1.insertBalanced)(root, 10);
+root = (0, binary_tree_1.insertBalanced)(root, 24);
+root = (0, binary_tree_1.insertBalanced)(root, 38);
+root = (0, binary_tree_1.insertBalanced)(root, 20);
+(0, binary_tree_1.printTree)(root);
+console.log("Root height:", (0, binary_tree_1.getHeight)(root));
+console.log("Balance factor:", (0, binary_tree_1.getBalanceFactor)(root));
+console.log("Right node balance factor:", (0, binary_tree_1.getBalanceFactor)(root.right));
+console.log("Left node balance factor:", (0, binary_tree_1.getBalanceFactor)(root.left));
+console.log("\n");
+/**
+ * 1
+ * |___2
+ * |   |___3
+ *
+ */
+console.log("\n-- RotateLeft --");
+let root2 = (0, binary_tree_1.createNode)(1);
+root2 = (0, binary_tree_1.insert)(root2, 2);
+root2 = (0, binary_tree_1.insert)(root2, 3);
+(0, binary_tree_1.printTree)(root2);
+console.log();
+console.log("Root height:", (0, binary_tree_1.getHeight)(root2));
+console.log("Balance factor:", (0, binary_tree_1.getBalanceFactor)(root2));
+console.log("Right node balance factor:", (0, binary_tree_1.getBalanceFactor)(root2.right));
+console.log("Left node balance factor:", (0, binary_tree_1.getBalanceFactor)(root2.left));
+console.log();
+/**
+ * 2
+ * |___3
+ * |___1
+ *
+ */
+root2 = (0, binary_tree_1.rotateLeft)(root2);
+(0, binary_tree_1.printTree)(root2);
+console.log("Root height:", (0, binary_tree_1.getHeight)(root2));
+console.log("Balance factor:", (0, binary_tree_1.getBalanceFactor)(root2));
+/**
+ * 3
+ * |___2
+ * |   |___1
+ *
+ */
+console.log("\n-- RotateRight --");
+let root3 = (0, binary_tree_1.createNode)(3);
+root3 = (0, binary_tree_1.insert)(root3, 2);
+root3 = (0, binary_tree_1.insert)(root3, 1);
+(0, binary_tree_1.printTree)(root3);
+console.log("Root height:", (0, binary_tree_1.getHeight)(root3));
+console.log("Balance factor:", (0, binary_tree_1.getBalanceFactor)(root3));
+console.log("Right node balance factor:", (0, binary_tree_1.getBalanceFactor)(root3.right));
+console.log("Left node balance factor:", (0, binary_tree_1.getBalanceFactor)(root3.left));
+console.log();
+/**
+ * 2
+ * |___3
+ * |___1
+ *
+ */
+root3 = (0, binary_tree_1.rotateRight)(root3);
+(0, binary_tree_1.printTree)(root3);
+console.log("Root height:", (0, binary_tree_1.getHeight)(root3));
+console.log("Balance factor:", (0, binary_tree_1.getBalanceFactor)(root3));
+/**
+ * 1
+ * |___3
+ * |   |___2
+ *
+ */
+console.log("\n-- RotateRightLeft --");
+let root4 = (0, binary_tree_1.createNode)(1);
+root4 = (0, binary_tree_1.insert)(root4, 3);
+root4 = (0, binary_tree_1.insert)(root4, 2);
+(0, binary_tree_1.printTree)(root4);
+console.log("Root height:", (0, binary_tree_1.getHeight)(root4));
+console.log("Balance factor:", (0, binary_tree_1.getBalanceFactor)(root4));
+console.log("Right node balance factor:", (0, binary_tree_1.getBalanceFactor)(root4.right));
+console.log("Left node balance factor:", (0, binary_tree_1.getBalanceFactor)(root4.left));
+console.log();
+/**
+ * 2
+ * |___3
+ * |___1
+ *
+ */
+root4 = (0, binary_tree_1.rotateRightLeft)(root4);
+(0, binary_tree_1.printTree)(root4);
+console.log("Root height:", (0, binary_tree_1.getHeight)(root4));
+console.log("Balance factor:", (0, binary_tree_1.getBalanceFactor)(root4));
+/**
+ * 3
+ * |___1
+ * |   |___2
+ *
+ */
+console.log("\n-- RotateLeftRight --");
+let root5 = (0, binary_tree_1.createNode)(3);
+root5 = (0, binary_tree_1.insert)(root5, 1);
+root5 = (0, binary_tree_1.insert)(root5, 2);
+(0, binary_tree_1.printTree)(root5);
+console.log("Root height:", (0, binary_tree_1.getHeight)(root5));
+console.log("Balance factor:", (0, binary_tree_1.getBalanceFactor)(root5));
+console.log("Right node balance factor:", (0, binary_tree_1.getBalanceFactor)(root5.right));
+console.log("Left node balance factor:", (0, binary_tree_1.getBalanceFactor)(root5.left));
+console.log();
+/**
+ * 2
+ * |___3
+ * |___1
+ *
+ */
+root5 = (0, binary_tree_1.rotateLeftRight)(root5);
+(0, binary_tree_1.printTree)(root5);
+console.log("Root height:", (0, binary_tree_1.getHeight)(root5));
+console.log("Balance factor:", (0, binary_tree_1.getBalanceFactor)(root5));
+console.log("\n");
