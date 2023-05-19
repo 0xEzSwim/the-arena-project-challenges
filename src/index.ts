@@ -65,6 +65,11 @@ import {
     Matrix
 } from "./cs-fundamentals-typescript/iteration-recursion";
 import { 
+    MessageRouterCipher,
+    MessageRouterDecoder,
+    MessageRouterEncoder 
+} from "./cs-fundamentals-typescript/jwt";
+import { 
     Link, 
     llAddAfter, 
     llCreateLink, 
@@ -312,3 +317,63 @@ console.log('Jump search result :', jumpSearchResult);
 const binarySearchResult: number | undefined = binarySearch(arrayNum, 8);
 console.log('Binary search result :', binarySearchResult);
 console.log('Array AFTER sort  :', arrayString);
+
+const encodeRouter = new MessageRouterEncoder();
+const decodeRouter = new MessageRouterDecoder();
+
+const string1: string = 'I have 2 apples';
+const string1Encode: string = encodeRouter.encode(string1);
+console.log(`\n` + `Original`.padEnd(11), string1);
+console.log(`Expected`.padEnd(11), `I have NUM(2) apples`);
+console.log(`Encoded`.padEnd(11), string1Encode);
+console.log(`Decoded`.padEnd(11), decodeRouter.decode(string1Encode));
+
+const string2: string = 'I have 22 apples and 3 oranges.';
+const string2Encode: string = encodeRouter.encode(string2);
+console.log(`\n` + `Original`.padEnd(11), string2);
+console.log(`Expected`.padEnd(11), `I have NUM(22) apples and NUM(3) oranges%2e`);
+console.log(`Encoded`.padEnd(11), string2Encode);
+console.log(`Decoded`.padEnd(11), decodeRouter.decode(string2Encode));
+
+const string3: string = '4 - +8 = -4';
+const string3Encode: string = encodeRouter.encode(string3);
+console.log(`\n` + `Original`.padEnd(11), string3);
+console.log(`Expected`.padEnd(11), `NUM(4) %2d NUM(8) %3d NUM(-4)`);
+console.log(`Encoded`.padEnd(11), string3Encode);
+console.log(`Decoded`.padEnd(11), decodeRouter.decode(string3Encode));
+
+const string4: string = 'I already sent a message to julius@thearenaproject.co 2 days ago!';
+const string4Encode: string = encodeRouter.encode(string4);
+console.log(`\n` + `Original`.padEnd(11), string4);
+console.log(`Expected`.padEnd(11), `I already sent a message to julius%40thearenaproject%2eco NUM(2) days ago%21`);
+console.log(`Encoded`.padEnd(11), string4Encode);
+console.log(`Decoded`.padEnd(11), decodeRouter.decode(string4Encode));
+
+const string5: string = '-101-23-34-234-345';
+const string5Encode: string = encodeRouter.encode(string5);
+console.log(`\n` + `Original`.padEnd(11), string5);
+console.log(`Expected`.padEnd(11), `NUM(-101)NUM(-23)NUM(-34)NUM(-234)NUM(-345)`);
+console.log(`Encoded`.padEnd(11), string5Encode);
+console.log(`Decoded`.padEnd(11), decodeRouter.decode(string5Encode));
+
+const string6: string = '23, more like 24, more like 73, Am I 23, or am I 24? Well, I\'m 23. I guess I am 23. Oh really, someone said I looked like 18.';
+const string6Encode: string = encodeRouter.encode(string6);
+console.log(`\n` + `Original`.padEnd(11), string6);
+console.log(`Expected`.padEnd(11), `NUM(23)%2c more like NUM(24)%2c more like NUM(73)%2e Am I NUM(23)%2c or am I NUM(24)%3f Well%2c I%27m NUM(23)%2e I guess I am NUM(23)%2e Oh really%2c someone said I looked like NUM(18)%2e`);
+console.log(`Result`.padEnd(11), string6Encode);
+console.log(`Decoded`.padEnd(11), decodeRouter.decode(string6Encode));
+
+const juliusCipher: MessageRouterCipher = new MessageRouterCipher();
+
+const message: string = 'Hello, world!';
+console.log(`\n` + `Original`.padEnd(11), message);
+console.log(`\n` + `Expected`.padEnd(11), `Khoor/#zruog$`);
+console.log(`Encoded`.padEnd(11), juliusCipher.encrypt(message, 3));
+console.log(`\n` + `Expected`.padEnd(11), `h&--0L@803-%A`);
+console.log(`Encoded`.padEnd(11), juliusCipher.encrypt(message, 32));
+console.log(`\n` + `Expected`.padEnd(11), `Wt{{~;/'~"{s0`);
+console.log(`Encoded`.padEnd(11), juliusCipher.encrypt(message, 15));
+console.log(`\n` + `Expected`.padEnd(11), ")FMMPl`XPSMEa");
+console.log(`Encoded`.padEnd(11), juliusCipher.encrypt(message, 64));
+console.log(`\n` + `Expected`.padEnd(11), "C`ggj'zrjmg_{");
+console.log(`Encoded`.padEnd(11), juliusCipher.encrypt(message, -5));
