@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const base_1 = require("./cs-fundamentals-typescript/base");
 const basic_structures_1 = require("./cs-fundamentals-typescript/basic-structures");
+const big_o_1 = require("./cs-fundamentals-typescript/big-o");
 const binary_tree_1 = require("./cs-fundamentals-typescript/binary-tree");
 const file_system_manipulation_1 = require("./cs-fundamentals-typescript/file-system-manipulation");
 const iteration_recursion_1 = require("./cs-fundamentals-typescript/iteration-recursion");
@@ -210,3 +211,30 @@ root5 = (0, binary_tree_1.rotateLeftRight)(root5);
 console.log("Root height:", (0, binary_tree_1.getHeight)(root5));
 console.log("Balance factor:", (0, binary_tree_1.getBalanceFactor)(root5));
 console.log("\n");
+const arrayString = [
+    "HeLlo",
+    ".23AbCdFH.-2",
+    "world",
+    "*@/#",
+    "hello",
+    "WoRlD",
+    ""
+];
+const arrayNum = [1, 2, 3, 4, 5, 6, 8, 9];
+console.log('Array BEFORE sort :', arrayString);
+console.log('ASC Array :', arrayNum);
+const insertionArr = (0, big_o_1.insertionSort)(arrayString, (a, b) => a.localeCompare(b));
+console.log('Insertion sorted array :', insertionArr);
+const bubbleArr = (0, big_o_1.bubbleSort)(arrayString, (a, b) => a.localeCompare(b));
+console.log('Bubble sorted array :', bubbleArr);
+const mergeArr = (0, big_o_1.mergeSort)(arrayString, (a, b) => a.localeCompare(b));
+console.log('Merge sorted array :', mergeArr);
+const quickArr = (0, big_o_1.quickSort)(arrayString, (a, b) => b.localeCompare(a));
+console.log('Quick sorted array :', quickArr);
+const linearSearchResult = (0, big_o_1.linearSearch)(arrayString, (element) => element === "HeLlo");
+console.log('Linear search result :', linearSearchResult);
+const jumpSearchResult = (0, big_o_1.jumpSearch)(arrayNum, 2);
+console.log('Jump search result :', jumpSearchResult);
+const binarySearchResult = (0, big_o_1.binarySearch)(arrayNum, 8);
+console.log('Binary search result :', binarySearchResult);
+console.log('Array AFTER sort  :', arrayString);

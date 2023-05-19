@@ -26,8 +26,32 @@ import {
     concatN,
     compareN
 } from "./cs-fundamentals-typescript/basic-structures";
-import { BNode, createNode, getBalanceFactor, getHeight, insert, insertBalanced, printTree, rotateLeft, rotateLeftRight, rotateRight, rotateRightLeft } from "./cs-fundamentals-typescript/binary-tree";
-import { readFileSync, writeFileSync } from "./cs-fundamentals-typescript/file-system-manipulation";
+import { 
+    binarySearch,
+    bubbleSort,
+    insertionSort,
+    jumpSearch,
+    linearSearch,
+    mergeSort,
+    quickSort 
+} from "./cs-fundamentals-typescript/big-o";
+import { 
+    BNode,
+    createNode,
+    getBalanceFactor,
+    getHeight,
+    insert,
+    insertBalanced,
+    printTree,
+    rotateLeft,
+    rotateLeftRight,
+    rotateRight,
+    rotateRightLeft 
+} from "./cs-fundamentals-typescript/binary-tree";
+import { 
+    readFileSync,
+    writeFileSync 
+} from "./cs-fundamentals-typescript/file-system-manipulation";
 import { 
     iterativeFactorial,
     recursiveFactorial,
@@ -260,3 +284,31 @@ printTree(root5);
 console.log("Root height:", getHeight(root5));
 console.log("Balance factor:", getBalanceFactor(root5));
 console.log("\n");
+
+const arrayString: string[] = [
+    "HeLlo",
+    ".23AbCdFH.-2",
+    "world",
+    "*@/#",
+    "hello",
+    "WoRlD",
+    ""
+];
+const arrayNum: number[] = [1, 2, 3, 4, 5, 6, 8, 9];
+console.log('Array BEFORE sort :', arrayString);
+console.log('ASC Array :', arrayNum);
+const insertionArr: string[] = insertionSort<string>(arrayString, (a: string, b: string) => a.localeCompare(b));
+console.log('Insertion sorted array :', insertionArr);
+const bubbleArr: string[] = bubbleSort<string>(arrayString, (a: string, b: string) => a.localeCompare(b));
+console.log('Bubble sorted array :', bubbleArr);
+const mergeArr: string[] = mergeSort<string>(arrayString, (a: string, b: string) => a.localeCompare(b));
+console.log('Merge sorted array :', mergeArr);
+const quickArr: string[] = quickSort<string>(arrayString, (a: string, b: string) => b.localeCompare(a));
+console.log('Quick sorted array :', quickArr);
+const linearSearchResult: string | undefined = linearSearch<string>(arrayString, (element: string) => element ===  "HeLlo");
+console.log('Linear search result :', linearSearchResult);
+const jumpSearchResult: number | undefined = jumpSearch(arrayNum, 2);
+console.log('Jump search result :', jumpSearchResult);
+const binarySearchResult: number | undefined = binarySearch(arrayNum, 8);
+console.log('Binary search result :', binarySearchResult);
+console.log('Array AFTER sort  :', arrayString);
